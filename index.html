@@ -26,7 +26,7 @@
 					<div class="menu-panel">
 						<details class="menu-group">
 							<summary>EDITS RESOURCES <img class="menu-dropdown-icon" src="assets/icons/dropdown.svg" alt=""></summary>
-							<a href="#tutorials">Tutorials</a>
+							<a href="#tutorials">Tutorials <span class="tutorial-coming-soon">* Coming soon</span></a>
 							<a href="flowers.html">Flowers</a>
 						</details>
 						<details class="menu-group">
@@ -47,19 +47,30 @@
 			<section class="hero" aria-label="About Yoki">
 				<div class="hero-wash" aria-hidden="true"></div>
 				<div class="hero-gallery" aria-hidden="true">
-					<img class="hero-gallery-image is-active" src="assets/images/fadingImages/sabrina.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/petal.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/littlemix.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/lady%20gaga.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/justin.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/diewiththesmile.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/bts.webp" alt="">
-					<img class="hero-gallery-image" src="assets/images/fadingImages/blackpink.webp" alt="">
+					<div class="hero-circle">
+						<img class="hero-gallery-image is-active" src="assets/images/fadingImages/sabrina.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/petal.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/littlemix.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/lady%20gaga.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/justin.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/diewiththesmile.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/bts.webp" alt="">
+						<img class="hero-gallery-image" src="assets/images/fadingImages/blackpink.webp" alt="">
+					</div>
 				</div>
 				<div class="hero-content hero-intro">
 					<h2 class="intro-title">HELLO, I'M YOKI</h2>
 					<p class="hero-copy">Hi, I’m Yoki! I have experience in IT-related fields, with a particular interest in web design. I also create content on TikTok and Instagram. Feel free to reach out for business inquiries or collaborations.</p>
 					<button class="discover-button" type="button">DISCOVER</button>
+				</div>
+				<div class="spotify-player" aria-label="Yoki Spotify playlist">
+					<div class="spotify-panel">
+						<button class="spotify-close" id="spotify-close" type="button" aria-label="Close Spotify player" title="Close Spotify player">×</button>
+						<iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/10428zhq9i96poR67uDYF2?utm_source=generator&si=38a12f3d4ce14b79&autoplay=1" title="Yoki Spotify playlist" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="eager"></iframe>
+					</div>
+					<button class="spotify-open" id="spotify-open" type="button" aria-label="Open Spotify player" title="Open Spotify player">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7 9.3c3.7-1.1 7.2-.8 10.2.4M7.8 12.2c3-.8 5.9-.6 8.4.4M8.8 15c2.1-.5 4.1-.3 5.9.3"/></svg>
+					</button>
 				</div>
 			</section>
 
@@ -112,6 +123,17 @@
 				activeImage = (activeImage + 1) % galleryImages.length;
 				galleryImages[activeImage].classList.add('is-active');
 			}, 4500);
+
+			const spotifyPlayer = document.querySelector('.spotify-player');
+			document.getElementById('spotify-close').addEventListener('click', () => {
+				spotifyPlayer.classList.add('is-closed');
+				document.getElementById('spotify-open').focus();
+			});
+			document.getElementById('spotify-open').addEventListener('click', () => {
+				spotifyPlayer.classList.remove('is-closed');
+				document.getElementById('spotify-close').focus();
+			});
+
 		</script>
 </body>
 </html>

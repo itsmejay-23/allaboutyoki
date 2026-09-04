@@ -51,7 +51,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand { align-items: center; display: flex; font-family: "Montserrat Bold", var(--sans); font-size: 15px; font-weight: 700; gap: 11px; letter-spacing: .07em; }
-.brand img { border: 1px solid rgba(255,255,255,.7); border-radius: 50%; filter: grayscale(1); height: 35px; object-fit: cover; width: 35px; }
+.brand img { border-radius: 50%; filter: grayscale(1); height: 35px; object-fit: cover; outline: 1px solid var(--paper); outline-offset: 3px; width: 35px; }
 .brand-dot, h1 span { color: #c9c8c4; }
 .main-nav { font-family: "Montserrat Bold", var(--mono); font-size: 14px; font-weight: 700; letter-spacing: .12em; }
 .explore-menu { position: relative; }
@@ -87,6 +87,8 @@ a { color: inherit; text-decoration: none; }
 .profile-frame img { border-radius: 50%; display: block; filter: grayscale(1) contrast(1.15); height: clamp(190px, 26vw, 285px); object-fit: cover; width: clamp(190px, 26vw, 285px); }
 h1 { font-family: "Montserrat Bold", var(--sans); font-size: clamp(52px, 10vw, 130px); font-weight: 700; letter-spacing: -.07em; line-height: .9; margin: 30px 0 20px; }
 .hero-copy { color: #d1d0cc; font-family: "Montserrat Light", var(--sans); font-size: 17px; font-weight: 300; line-height: 1.65; margin: 0; }
+.discover-button { background: transparent; border: 1px solid rgba(241,240,236,.85); color: var(--paper); cursor: pointer; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; margin-top: 32px; padding: 14px 24px; transition: background-color .2s ease, color .2s ease; }
+.discover-button:hover, .discover-button:focus-visible { background: var(--paper); color: var(--ink); outline: none; }
 .scroll-cue { align-items: center; border-top: 1px solid var(--line); color: #bbb9b5; display: flex; gap: 24px; margin-top: 48px; padding-top: 15px; }
 .scroll-cue b { color: var(--paper); font-size: 19px; font-weight: 400; }
 .hero-index { bottom: 33px; color: #a6a5a0; position: absolute; right: 4.5vw; z-index: 1; }

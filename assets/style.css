@@ -84,18 +84,6 @@ a { color: inherit; text-decoration: none; }
 .hero-circle { border-radius: 50%; height: min(96vw, 980px); overflow: hidden; position: absolute; right: -12%; top: 60%; transform: translateY(-50%); width: min(96vw, 980px); }
 .hero-gallery-image { filter: grayscale(1) brightness(.78); height: 100%; inset: 0; object-fit: cover; object-position: center 22%; opacity: 0; position: absolute; transform: scale(1.03); transition: opacity 1.4s ease, transform 6s ease; width: 100%; }
 .hero-gallery-image.is-active { opacity: .58; transform: scale(1); }
-.spotify-player { bottom: 25px; height: 352px; position: absolute; right: 4.5vw; width: min(360px, 34vw); z-index: 2; }
-.spotify-panel { height: 352px; position: relative; }
-.spotify-player iframe { border: 0; border-radius: 12px; height: 352px; opacity: .7; width: 100%; }
-.spotify-close { background: var(--ink); border: 1px solid rgba(241,240,236,.72); border-radius: 50%; color: var(--paper); cursor: pointer; font-size: 22px; height: 30px; line-height: 1; opacity: 0; padding: 0; pointer-events: none; position: absolute; right: 8px; top: 8px; transition: opacity .2s ease, background-color .2s ease, color .2s ease; width: 30px; z-index: 1; }
-.spotify-panel:hover .spotify-close, .spotify-panel:focus-within .spotify-close { opacity: 1; pointer-events: auto; }
-.spotify-close:hover, .spotify-close:focus-visible { color: #aaa9a5; outline: 1px solid var(--paper); }
-.spotify-open { align-items: center; background: var(--ink); border: 1px solid rgba(241,240,236,.72); border-radius: 50%; color: var(--paper); cursor: pointer; display: none; height: 42px; justify-content: center; padding: 8px; width: 42px; }
-.spotify-open:hover, .spotify-open:focus-visible { background: var(--paper); color: var(--ink); outline: none; }
-.spotify-open svg { fill: none; height: 100%; stroke: currentColor; stroke-linecap: round; stroke-width: 1.5; width: 100%; }
-.spotify-player.is-closed { height: 42px; width: 42px; }
-.spotify-player.is-closed .spotify-panel { display: none; }
-.spotify-player.is-closed .spotify-open { display: flex; }
 .hero-content { align-items: center; display: flex; flex-direction: column; padding: 110px 20px 48px; position: relative; text-align: center; z-index: 1; }
 .hero-intro { align-items: flex-start; margin-left: 9vw; margin-right: auto; max-width: 460px; text-align: left; }
 .intro-title { font-family: "Montserrat Bold", var(--sans); font-size: clamp(24px, 3vw, 38px); font-weight: 700; letter-spacing: .02em; line-height: 1.1; margin: 0 0 22px; }

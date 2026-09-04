@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "Montserrat Light";
+  src: url("font/Montserrat-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url("font/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --ink: #0b0b0b;
+  --paper: #f1f0ec;
+  --muted: #9d9c98;
+  --line: rgba(241, 240, 236, .24);
+  --sans: "Space Grotesk", sans-serif;
+  --mono: "DM Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.site-shell { min-height: 100vh; overflow: hidden; }
+
+.site-header {
+  align-items: center;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(241, 240, 236, .24);
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 26px 4.5vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
+}
+
+.brand { align-items: center; display: flex; font-family: "Montserrat Bold", var(--sans); font-size: 15px; font-weight: 700; gap: 11px; letter-spacing: .07em; }
+.brand img { border: 1px solid rgba(255,255,255,.7); border-radius: 50%; filter: grayscale(1); height: 35px; object-fit: cover; width: 35px; }
+.brand-dot, h1 span { color: #c9c8c4; }
+.main-nav { font-family: "Montserrat Bold", var(--mono); font-size: 14px; font-weight: 700; letter-spacing: .12em; }
+.explore-menu { position: relative; }
+.explore-menu summary { align-items: center; cursor: pointer; display: flex; gap: 12px; list-style: none; padding: 8px 0; }
+.explore-menu summary::-webkit-details-marker { display: none; }
+.dropdown-icon { filter: invert(1); height: 14px; object-fit: contain; transition: transform .25s ease; width: 22px; }
+.explore-menu[open] .dropdown-icon { transform: rotate(180deg); }
+.menu-panel { background: var(--paper); color: var(--ink); display: grid; gap: 14px; min-width: 240px; padding: 22px; position: absolute; right: 0; top: 40px; }
+.menu-group { display: grid; gap: 9px; grid-template-columns: 1fr; }
+.menu-group summary { align-items: center; cursor: pointer; display: flex; font-size: 12px; justify-content: space-between; letter-spacing: .15em; list-style: none; margin: 0 0 4px; }
+.menu-group summary::-webkit-details-marker { display: none; }
+.menu-dropdown-icon { height: 10px; opacity: .75; transform: rotate(-45deg); transition: transform .25s ease; width: 16px; }
+.menu-group[open] .menu-dropdown-icon { transform: rotate(135deg); }
+.menu-group a { display: block; font-family: "Montserrat Light", var(--sans); font-size: 14px; font-weight: 300; letter-spacing: 0; padding: 5px 7px; transition: background-color .2s ease, color .2s ease; }
+.menu-group a:hover { background: rgba(11, 11, 11, .1); color: #55534f; }
+.menu-group a.menu-social-link { align-items: center; display: flex; gap: 9px; }
+.menu-social-icon svg { display: block; height: 16px; width: 16px; }
+.tiktok-icon svg { fill: currentColor; }
+.instagram-icon svg { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.instagram-icon .icon-dot { fill: currentColor; stroke: none; }
+.contact-icon svg { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.email-address { font-size: 12px; overflow-wrap: anywhere; }
+
+.hero { align-items: center; display: flex; justify-content: center; min-height: 680px; position: relative; }
+.hero-wash { background: linear-gradient(180deg, rgba(0,0,0,.74), rgba(0,0,0,.58)), url("images/night.webp") center 28% / cover; filter: grayscale(1); inset: 0; opacity: .7; position: absolute; }
+.hero-wash::after { background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(255,255,255,.035) 4px); content: ""; inset: 0; position: absolute; }
+.hero-content { align-items: center; display: flex; flex-direction: column; padding: 110px 20px 48px; position: relative; text-align: center; z-index: 1; }
+.hero-intro { align-items: flex-start; margin-left: 9vw; margin-right: auto; max-width: 460px; text-align: left; }
+.intro-title { font-family: "Montserrat Bold", var(--sans); font-size: clamp(24px, 3vw, 38px); font-weight: 700; letter-spacing: .02em; line-height: 1.1; margin: 0 0 22px; }
+.eyebrow, .hero-index, .scroll-cue, .site-footer { font-family: var(--mono); font-size: 10px; letter-spacing: .15em; }
+.eyebrow { color: #bab9b5; margin: 0 0 27px; }
+.profile-frame { border: 1px solid rgba(241,240,236,.85); border-radius: 50%; padding: 8px; }
+.profile-frame img { border-radius: 50%; display: block; filter: grayscale(1) contrast(1.15); height: clamp(190px, 26vw, 285px); object-fit: cover; width: clamp(190px, 26vw, 285px); }
+h1 { font-family: "Montserrat Bold", var(--sans); font-size: clamp(52px, 10vw, 130px); font-weight: 700; letter-spacing: -.07em; line-height: .9; margin: 30px 0 20px; }
+.hero-copy { color: #d1d0cc; font-family: "Montserrat Light", var(--sans); font-size: 17px; font-weight: 300; line-height: 1.65; margin: 0; }
+.scroll-cue { align-items: center; border-top: 1px solid var(--line); color: #bbb9b5; display: flex; gap: 24px; margin-top: 48px; padding-top: 15px; }
+.scroll-cue b { color: var(--paper); font-size: 19px; font-weight: 400; }
+.hero-index { bottom: 33px; color: #a6a5a0; position: absolute; right: 4.5vw; z-index: 1; }
+
+.community { display: grid; grid-template-columns: 1fr 1fr; }
+.social-panel { align-items: center; display: grid; gap: 15px; grid-template-columns: auto 1fr auto; min-height: 210px; padding: 38px 7vw; position: relative; transition: padding .25s ease; }
+.social-panel:hover { padding-left: calc(7vw + 9px); padding-right: calc(7vw - 9px); }
+.social-panel-light { background: var(--paper); color: var(--ink); }
+.social-panel-dark { background: var(--ink); color: var(--paper); border-top: 1px solid var(--line); }
+.social-icon { grid-row: span 2; }
+.social-icon svg { fill: currentColor; height: 27px; stroke: none; width: 27px; }
+.social-panel-dark .social-icon svg { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.social-panel-dark .social-icon .icon-dot { fill: currentColor; stroke: none; }
+.social-name, .social-label { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; }
+.social-label { color: var(--muted); grid-column: 2; }
+.social-panel-light .social-label { color: #777671; }
+.social-panel strong { font-size: clamp(25px, 3vw, 40px); font-weight: 500; grid-column: 3; grid-row: span 2; letter-spacing: -.05em; }
+.arrow { font-size: 25px; grid-column: 3; position: absolute; right: 7vw; top: 26px; }
+.site-footer { color: #777671; display: flex; justify-content: space-between; padding: 22px 4.5vw; }
+
+@media (max-width: 620px) {
+  .site-header { padding: 20px 6vw; }
+  .hero { min-height: 620px; }
+  .hero-content { padding-top: 100px; }
+  .hero-intro { align-items: center; margin: 0 auto; max-width: 480px; text-align: center; }
+  .hero-index { bottom: 23px; right: 6vw; }
+  .community { grid-template-columns: 1fr; }
+  .social-panel { min-height: 150px; padding: 30px 8vw; }
+  .social-panel:hover { padding-left: 8vw; padding-right: 8vw; }
+  .arrow { right: 8vw; }
+  .site-footer { flex-wrap: wrap; gap: 12px; padding: 20px 6vw; }
+  .site-footer span:last-child { width: 100%; }
+}
